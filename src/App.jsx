@@ -1,9 +1,10 @@
 // import Home from "./Components/Home";
+import Auth from "./Components/Auth";
 
 function App() {
   return (
-    <div className="flex justify-center items-center h-screen bg-[#362f26] text-white">
-      Testing
+    <div className="flex justify-center items-start h-screen bg-[#EDEDE9] text-[#E7E0DA]">
+      <Auth />
     </div>
   );
 }
