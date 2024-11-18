@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 // ---------------------------
 const Nav = () => {
   return (
-    <div className="flex md:flex-col justify-between items-center w-screen h-14 md:h-screen md:w-24 fixed top-0 left-0 bg-foreground-dark/30 backdrop-filter backdrop-blur-md px-4 md:py-10 text-[#FFE39C]">
+    <div className="flex md:flex-col justify-between md:justify-evenly items-center w-screen h-14 md:h-screen md:w-24 fixed top-0 left-0 bg-foreground-dark/30 px-4 md:py-10 text-[#FFE39C]">
       <Link to="/dashboard">
         <svg
           width="24"

@@ -1,8 +1,8 @@
 // ---------------------------
 // Import components
 // ---------------------------
+import Featured from "./Featured";
 import Nav from "./Nav";
-import Cards from "./Cards";
 
 // ---------------------------
 // Code Begins
@@ -18,7 +18,7 @@ const Dashboard = ({ username }) => {
   return (
     <div>
       <Nav />
-      <Cards />
+      <Featured />
     </div>
   );
 };
