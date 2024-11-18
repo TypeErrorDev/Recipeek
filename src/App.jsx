@@ -1,3 +1,6 @@
+// ---------------------------
+// Required imports
+// ---------------------------
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -5,9 +8,13 @@ import PrivateRoute from "./Components/PrivateRoute";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
+import Settings from "./Components/Settings";
+import SearchForm from "./Components/SearchForm";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 function App() {
-  // Initialize isAuthenticated based on whether username exists in localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     const savedUsername = localStorage.getItem("username");
     return Boolean(savedUsername);
@@ -53,6 +60,22 @@ function App() {
         <Route
           path="/register"
           element={<Register onRegister={handleLogin} />}
+        />
+        <Route
+          path="/settings"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <Settings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <SearchForm />
+            </PrivateRoute>
+          }
         />
       </Routes>
     </div>

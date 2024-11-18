@@ -1,6 +1,12 @@
+// ---------------------------
+// Required imports
+// ---------------------------
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useCallback } from "react";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 const Login = ({ onLogin }) => {
   const [user, setUser] = useState(() => "");
   const navigate = useNavigate();
