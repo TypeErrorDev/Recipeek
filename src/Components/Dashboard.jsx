@@ -2,6 +2,7 @@
 // Import components
 // ---------------------------
 import Nav from "./Nav";
+import Cards from "./Cards";
 
 // ---------------------------
 // Code Begins
@@ -17,6 +18,7 @@ const Dashboard = ({ username }) => {
   return (
     <div>
       <Nav />
+      <Cards />
     </div>
   );
 };
