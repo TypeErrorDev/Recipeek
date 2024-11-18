@@ -1,11 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useState, useCallback } from "react";
 
-const Register = () => {
+const Register = ({ onRegister }) => {
+  const [username, setUsername] = useState(() => "");
   const navigate = useNavigate();
-  const handleSignUp = () => {
-    // Perform sign up logic here
-    return navigate("/dashboard");
-  };
+
+  const handleSignUp = useCallback(() => {
+    if (!username) {
+      alert("Please enter a username");
+      return;
+    }
+    onRegister(username);
+    navigate("/dashboard");
+  }, [username, navigate, onRegister]);
 
   return (
     <div>
@@ -20,6 +27,8 @@ const Register = () => {
           id="username"
           className="font-mono p-1 w-9/12 bg-[#02020E] border-b-[1px] border-white focus:outline-none focus:border-border-b-light"
           placeholder="Enter your username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <button
           type="button"

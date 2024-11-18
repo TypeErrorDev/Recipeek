@@ -1,19 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-const Login = () => {
-  const [user, setUser] = useState("");
+const Login = ({ onLogin }) => {
+  const [user, setUser] = useState(() => "");
   const navigate = useNavigate();
-  const handleLogin = () => {
+
+  const handleLogin = useCallback(() => {
     if (user === "") {
       alert("Please enter a username");
       return;
-    } else {
-      console.log("user: ", user);
-      console.log("login successful");
-      return navigate("/dashboard");
     }
-  };
+    onLogin(user);
+    navigate("/dashboard");
+  }, [user, navigate, onLogin]);
 
   return (
     <div>
@@ -26,13 +25,14 @@ const Login = () => {
         <input
           type="text"
           id="username"
-          className="font-mono p-1 w-9/12 bg-[#02020E] border-b-[1px] border-white focus:outline-none focus:border-border-b-light placeholder:text-[#FFE39C]/40 "
+          className="font-mono p-1 w-9/12 bg-[#02020E] border-b-[1px] border-white focus:outline-none focus:border-border-b-light placeholder:text-[#FFE39C]/40"
           placeholder="Username"
+          value={user}
           onChange={(e) => setUser(e.target.value)}
         />
         <button
           type="button"
-          className="text-[#FFE39C] bg-[#1A1B26] hover:bg-[#1a1b26ab] p-3 mt-4 w-9/12 rounded-md shadow-sm shadow-[#584f32] text-sm "
+          className="text-[#FFE39C] bg-[#1A1B26] hover:bg-[#1a1b26ab] p-3 mt-4 w-9/12 rounded-md shadow-sm shadow-[#584f32] text-sm"
           onClick={handleLogin}
         >
           Login
