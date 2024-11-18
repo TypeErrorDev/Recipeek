@@ -2,6 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      mono: ['"Fira Code"', "monospace"],
+      sans: ['"Inter"', "sans-serif"],
+      body: ["Outfit", "sans-serif"],
+    },
     colors: {
       // Core Colors
       main_text: {
