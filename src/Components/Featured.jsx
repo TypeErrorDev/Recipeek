@@ -1,30 +1,52 @@
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import Cards from "./Cards";
-const Featured = () => {
-  const randomNumber = Math.floor(Math.random() * 100);
-  // TODO: Fetch data from the API for featured recipes
-  //   https://dummyjson.com/recipes?limit=6&skip={RandomNumber}&select=name,image,rating,tags
-  axios({
-    url: `https://dummyjson.com/recipes?limit=6&skip=${randomNumber}&select=name,image,rating,tags`,
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      const results = res.data;
-      console.log(results);
-    })
-    .catch((err) => {
-      console.error("Message: ", err);
-    });
 
-  //   TODO: Random number generator
+const Featured = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const randomNumber = Math.floor(Math.random() * 100);
+      try {
+        const res = await axios.get(
+          `https://dummyjson.com/recipes?limit=6&skip=${randomNumber}&select=name,image,rating,tags`
+        );
+        setRecipes(res.data.recipes);
+        console.log(res.data.recipes);
+      } catch (err) {
+        console.error("Error fetching recipes:", err);
+        setError("Failed to fetch featured recipes.");
+      }
+    };
+
+    fetchRecipes();
+  }, []);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
-    <div>
-      <Cards />
+    <div className=" featured-recipes flex flex-col md:flex-row flex-wrap justify-center items-center md:w-[700px] lg:w-[1000px] mt-16">
+      {recipes.length > 0 ? (
+        recipes.map((recipe, index) => (
+          <Cards
+            key={index}
+            image={recipe.image}
+            name={recipe.name}
+            rating={recipe.rating}
+            tags={recipe.tags}
+          />
+        ))
+      ) : (
+        <p className="text-2xl w-auto text-wrap text-warning-dark p-2 text-center">
+          Loading...🍳🔥
+        </p>
+      )}
     </div>
   );
 };

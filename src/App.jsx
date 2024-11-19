@@ -46,7 +46,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#02020E] text-secondary_text-light font-mono">
+    <div className="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[#02020E] text-secondary_text-light font-mono">
       <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route
