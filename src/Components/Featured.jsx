@@ -10,7 +10,7 @@ const Featured = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const randomNumber = Math.floor(Math.random() * 100);
+      const randomNumber = Math.floor(Math.random() * 50);
       try {
         const res = await axios.get(
           `https://dummyjson.com/recipes?limit=6&skip=${randomNumber}&select=name,image,rating,tags`
@@ -31,7 +31,7 @@ const Featured = () => {
   }
 
   return (
-    <div className=" featured-recipes flex flex-col md:flex-row flex-wrap justify-center items-center md:w-[700px] lg:w-[1000px] mt-16">
+    <div className=" featured-recipes flex flex-col md:flex-row flex-wrap justify-center items-center md:w-[700px] lg:w-[1000px] mt-10">
       {recipes.length > 0 ? (
         recipes.map((recipe, index) => (
           <Cards
