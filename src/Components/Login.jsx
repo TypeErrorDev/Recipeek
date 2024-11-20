@@ -31,7 +31,7 @@ const Login = ({ onLogin }) => {
         <input
           type="text"
           id="username"
-          className="font-mono p-1 w-9/12 bg-[#02020E] border-b-[1px] border-white focus:outline-none focus:border-border-b-light placeholder:text-[#FFE39C]/40"
+          className="font-mono p-1 mt-2 w-9/12 bg-[#02020E] border-b-[1px] border-white focus:outline-none focus:border-border-b-light placeholder:text-[#FFE39C]/40"
           placeholder="Username"
           value={user}
           onChange={(e) => setUser(e.target.value)}

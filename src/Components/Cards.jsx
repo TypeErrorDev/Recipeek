@@ -1,3 +1,5 @@
+// import { Link } from "react-router-dom";
+
 const Cards = ({ image, name, tags, rating }) => {
   const randomColor = () => {
     const r = Math.floor(Math.random() * 128) + 128;
@@ -16,7 +18,7 @@ const Cards = ({ image, name, tags, rating }) => {
     <div>
       <div className="flex justify-center items-center"></div>
       <div className="flex flex-row md:flex-row justify-center items-center my-2">
-        <div className="border-double bg-foreground-dark h-72 w-64 text-wrap text-warning-dark rounded-xl flex flex-col justify-around items-center text-center m-5 transition-all transform hover:scale-110">
+        <div className="border-double bg-foreground-dark h-72 w-64 text-wrap text-warning-dark rounded-xl flex flex-col justify-around items-center text-center m-5 transition-all transform hover:scale-110 duration-700 hover:rotate-6 cursor-pointer">
           <div>
             <img
               src={image}

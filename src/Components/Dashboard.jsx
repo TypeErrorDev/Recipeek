@@ -18,8 +18,8 @@ const Dashboard = ({ username }) => {
   return (
     <div>
       <Nav />
-      <h1 className="text-4xl text-center text-[#FFE39C]">
-        Welcome, {username}!
+      <h1 className="text-4xl text-center mt-20 text-[#FFE39C]">
+        Featured Recipes
       </h1>
       <Featured />
     </div>
