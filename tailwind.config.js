@@ -115,6 +115,12 @@ export default {
         // make a custom shadow for some gold color
         "custom-gold": "0 4px 6px rgba(255, 227, 156, 0.3)",
       },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
     },
   },
   plugins: [],

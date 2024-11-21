@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import PrivateRoute from "./Components/PrivateRoute";
 import Login from "./Components/Login";
+import LandingPage from "./Components/LandingPage";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
 import Settings from "./Components/Settings";
@@ -49,7 +50,8 @@ function App() {
   return (
     <div className="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[#02020E] text-secondary_text-light font-mono">
       <Routes>
-        <Route path="/" element={<Login onLogin={handleLogin} />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route
           path="/dashboard"
           element={

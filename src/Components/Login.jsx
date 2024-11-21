@@ -43,10 +43,16 @@ const Login = ({ onLogin }) => {
         >
           Login
         </button>
-        <p className="mt-4 text-xs">
+        <p className="mt-4">
           Dont have an account?{" "}
           <Link to="/register" className="text-[#FFE39C] hover:text-[#d3ff0f]">
             Sign Up
+          </Link>
+        </p>
+        <p className="mt-2">
+          Remove after debugging:{" "}
+          <Link to="/" className="text-[#FFE39C] hover:text-[#d3ff0f]">
+            Landing Page
           </Link>
         </p>
       </div>
