@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import Cards from "./Cards";
 
@@ -13,8 +13,9 @@ const Featured = () => {
       const randomNumber = Math.floor(Math.random() * 50);
       try {
         const res = await axios.get(
-          `https://dummyjson.com/recipes?limit=6&skip=${randomNumber}&select=name,image,rating,tags`
+          `https://dummyjson.com/recipes?limit=6&skip=${randomNumber}`
         );
+        // &select=name,image,rating,tags
         setRecipes(res.data.recipes);
         console.log(res.data.recipes);
       } catch (err) {
@@ -36,10 +37,12 @@ const Featured = () => {
         recipes.map((recipe, index) => (
           <Cards
             key={index}
+            fullRecipe={recipe}
             image={recipe.image}
             name={recipe.name}
             rating={recipe.rating}
             tags={recipe.tags}
+            id={recipe.id}
           />
         ))
       ) : (

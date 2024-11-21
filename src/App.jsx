@@ -10,6 +10,7 @@ import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
 import Settings from "./Components/Settings";
 import SearchForm from "./Components/SearchForm";
+import ProductDetails from "./Components/ProductDetails";
 
 // ---------------------------
 // Code Begins
@@ -74,6 +75,14 @@ function App() {
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <SearchForm />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/recipe/:id"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <ProductDetails />
             </PrivateRoute>
           }
         />
