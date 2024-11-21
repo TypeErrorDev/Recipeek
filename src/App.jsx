@@ -1,3 +1,6 @@
+// ---------------------------
+// Required imports
+// ---------------------------
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -5,9 +8,14 @@ import PrivateRoute from "./Components/PrivateRoute";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import Register from "./Components/Register";
+import Settings from "./Components/Settings";
+import SearchForm from "./Components/SearchForm";
+import ProductDetails from "./Components/ProductDetails";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 function App() {
-  // Initialize isAuthenticated based on whether username exists in localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     const savedUsername = localStorage.getItem("username");
     return Boolean(savedUsername);
@@ -39,7 +47,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[#02020E] text-secondary_text-light font-mono">
+    <div className="flex flex-col flex-wrap justify-center items-center min-h-screen bg-[#02020E] text-secondary_text-light font-mono">
       <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} />} />
         <Route
@@ -53,6 +61,30 @@ function App() {
         <Route
           path="/register"
           element={<Register onRegister={handleLogin} />}
+        />
+        <Route
+          path="/settings"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <Settings />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <SearchForm />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/recipe/:id"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <ProductDetails />
+            </PrivateRoute>
+          }
         />
       </Routes>
     </div>

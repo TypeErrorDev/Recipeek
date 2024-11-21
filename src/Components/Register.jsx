@@ -1,6 +1,12 @@
+// ---------------------------
+// Required imports
+// ---------------------------
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useCallback } from "react";
 
+// ---------------------------
+// Code Begins
+// ---------------------------
 const Register = ({ onRegister }) => {
   const [username, setUsername] = useState(() => "");
   const navigate = useNavigate();

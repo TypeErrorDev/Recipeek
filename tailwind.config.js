@@ -106,7 +106,16 @@ export default {
         light: "#64748B",
       },
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        "custom-light-grey": "0 4px 6px rgba(255, 255, 255, 0.1)",
+        "custom-warm-brown": "0 4px 6px rgba(160, 140, 115, 0.2)",
+        "custom-light-blue": "0 4px 6px rgba(60, 80, 120, 0.2)",
+        "custom-muted-purple": "0 4px 6px rgba(100, 50, 130, 0.3)",
+        // make a custom shadow for some gold color
+        "custom-gold": "0 4px 6px rgba(255, 227, 156, 0.3)",
+      },
+    },
   },
   plugins: [],
 };
