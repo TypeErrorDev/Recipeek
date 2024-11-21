@@ -38,7 +38,7 @@ const LandingPage = () => {
         </div>
         <div className="relative z-20 px-4">
           <div className="text-center pt-32 outline-dashed">
-            <h1 className="text-warning-dark text-4xl font-bold">Cood with</h1>
+            <h1 className="text-warning-dark text-4xl font-bold">Cook with</h1>
             <h1 className="text-warning-dark text-4xl font-bold mb-4">
               Confidence
             </h1>
