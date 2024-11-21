@@ -29,7 +29,7 @@ const ProductDetails = () => {
       };
       fetchRecipeDetails();
     }
-  }, [id, location.state]);
+  }, [id]);
 
   if (loading) {
     return (
