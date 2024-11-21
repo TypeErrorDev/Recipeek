@@ -30,7 +30,7 @@ const LandingPage = () => {
                 fill="none"
                 stroke="#1d1d21"
                 strokeWidth="1"
-                opacity="0.45"
+                opacity="0.7"
               />
             </pattern>
             <rect width="800" height="1200" fill="url(#grid)" />

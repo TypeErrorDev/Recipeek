@@ -4,6 +4,9 @@
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+// ---------------------------
+// Component Imports
+// ---------------------------
 import PrivateRoute from "./Components/PrivateRoute";
 import Login from "./Components/Login";
 import LandingPage from "./Components/LandingPage";
