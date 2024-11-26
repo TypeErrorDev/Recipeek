@@ -37,7 +37,7 @@ const LandingPage = () => {
           </svg>
         </div>
         <div className="relative z-20 px-4">
-          <div className="text-center pt-32 outline-dashed">
+          <div className="text-center pt-32 ">
             <h1 className="text-warning-dark text-4xl font-bold">Cook with</h1>
             <h1 className="text-warning-dark text-4xl font-bold mb-4">
               Confidence
@@ -64,9 +64,6 @@ const LandingPage = () => {
             </button>
           </div>
         </div>
-      </div>
-      <div className="text-warning-dark flex justify-center items-center absolute z-20 mt-40 md:mt-0 h-16 w-screen bg-[#3e3724c6]">
-        <h1 className="text-3xl">Why Choose Our Platform?</h1>
       </div>
     </>
   );
