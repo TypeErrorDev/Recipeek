@@ -45,8 +45,14 @@ const Register = ({ onRegister }) => {
         </button>
         <p className="mt-2">
           Already have an account?{" "}
-          <Link to="/" className="text-[#FFE39C] hover:text-[#d3ff0f]">
+          <Link to="/login" className="text-[#FFE39C] hover:text-[#d3ff0f]">
             Login
+          </Link>
+        </p>
+        <p className="mt-2">
+          Remove after debugging:{" "}
+          <Link to="/" className="text-[#FFE39C] hover:text-[#d3ff0f]">
+            Landing Page
           </Link>
         </p>
       </div>

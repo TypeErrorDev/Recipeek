@@ -46,7 +46,7 @@ const Featured = () => {
           />
         ))
       ) : (
-        <p className="text-2xl w-auto text-wrap text-warning-dark p-2 text-center">
+        <p className="text-[50px] w-auto text-wrap text-warning-dark p-2 text-center">
           Loading...🍳🔥
         </p>
       )}
