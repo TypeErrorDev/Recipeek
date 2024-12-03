@@ -59,6 +59,22 @@ const ProductDetails = () => {
     <div className="flex justify-center items-center text-warning-dark">
       <div className="mt-16 h-screen w-96 flex flex-col justify-center items-center bg-secondary_text-light">
         <Nav />
+        <div>
+          <img
+            src={recipe.image}
+            alt={recipe.name}
+            className="h-60 w-60 rounded-md mb-2"
+          />
+        </div>
+        <div>
+          <h2>{recipe.name}</h2>
+          <div>
+            <p>Rating: {recipe.rating}</p>
+          </div>
+          <div>
+            <p className="text-wrap text-xl px-5">{recipe.instructions}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
