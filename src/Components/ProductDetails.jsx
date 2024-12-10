@@ -9,14 +9,14 @@ const ProductDetails = () => {
   const location = useLocation();
 
   const [recipe, setRecipe] = useState(null);
-  const [ingredients, setIngredients] = useState([]); // Manages ingredients
-  const [steps, setSteps] = useState([]); // Manages instructions
+  const [ingredients, setIngredients] = useState([]);
+  const [steps, setSteps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const processRecipe = (recipeData) => {
-      console.log("Fetched Recipe Data:", recipeData); // Debugging
+      console.log("Fetched Recipe Data:", recipeData);
 
       setRecipe(recipeData);
 
@@ -27,10 +27,9 @@ const ProductDetails = () => {
           "Ingredients field is not an array:",
           recipeData.ingredients
         );
-        setIngredients([]); // Fallback for invalid ingredients
+        setIngredients([]);
       }
 
-      // Use the array of strings directly
       if (Array.isArray(recipeData.instructions)) {
         setSteps(recipeData.instructions);
       } else {
@@ -38,7 +37,7 @@ const ProductDetails = () => {
           "Instructions field is not an array:",
           recipeData.instructions
         );
-        setSteps([]); // Fallback for invalid instructions
+        setSteps([]);
       }
       setLoading(false);
     };
