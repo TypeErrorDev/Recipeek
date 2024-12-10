@@ -13,9 +13,11 @@ const SearchForm = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(
-        `https://dummyjson.com/recipes/search?q=${searchTerm}`
-      );
+      const url = searchTerm.trim()
+        ? `https://dummyjson.com/recipes/search?q=${searchTerm}`
+        : "https://dummyjson.com/recipes";
+
+      const res = await fetch(url);
       const data = await res.json();
       setRecipes(data.recipes || []);
     } catch (error) {
@@ -25,15 +27,18 @@ const SearchForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Nav />
-      <form onSubmit={handleSearch}>
+      <form
+        onSubmit={handleSearch}
+        className="flex justify-center items-center w-full max-w-lg px-4 mt-10"
+      >
         <input
           type="text"
           value={searchTerm}
           onChange={handleChange}
           placeholder="Search for recipes"
-          className="h-10 rounded-lg px-5 text-background-dark text-l"
+          className="h-10 w-full rounded-lg px-5 text-background-dark text-l"
         />
         <button
           type="submit"
@@ -43,7 +48,7 @@ const SearchForm = () => {
         </button>
       </form>
 
-      <div className=" featured-recipes flex flex-col md:flex-row flex-wrap justify-center items-center md:w-[700px] lg:w-[1000px] mt-10">
+      <div className="featured-recipes flex flex-col md:flex-row flex-wrap justify-center items-center md:w-[700px] lg:w-[1000px] mt-10">
         {recipes.length > 0 ? (
           recipes.map((recipe, index) => (
             <Cards
